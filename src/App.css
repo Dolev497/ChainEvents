@@ -36,3 +36,6 @@
     transform: rotate(360deg);
   }
 }
+@import './components/Sidebar.css';
+@import './components/Header.css';
+@import './components/PostForm.css';

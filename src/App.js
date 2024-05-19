@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { Sidebar } from './components/Sidebar';
+import { Header } from './components/Header';
+import { PostForm } from './components/PostForm';
+import { PostDetails } from './components/PostDetails';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [postDetails, setPostDetails] = useState({ username: '', imageURL: '' });
+  const [showPostDetails, setShowPostDetails] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main">
+      <Sidebar />
+      <div className="body">
+        <Header />
+        <div className="container">
+          <div className="wrapper">
+            <PostForm setPostDetails={setPostDetails} setShowPostDetails={setShowPostDetails} />
+            {showPostDetails && <PostDetails postDetails={postDetails} />}
+          </div>
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
