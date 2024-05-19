@@ -9,8 +9,8 @@ export function Sidebar() {
         <a className="top-space" href="#">Dashboard</a>
         <a href="#">Home</a>
         <a href="#">Profile</a>
-        <a href="#">MLH</a>
-        <a href="#">Devpost</a>
+        <a href="https://mlh.io/">MLH</a>
+        <a href="https://devpost.com/">Devpost</a>
         <a href="#">Settings</a>
       </div>
     );
